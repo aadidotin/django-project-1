@@ -1,0 +1,14 @@
+{% extends "layouts/auth_layout.html" %} {% block title %} {% if form.instance.pk %} Edit Todo {% else %} Add New Todo {% endif %} {% endblock %} {% block content %}
+
+<h2>{% if form.instance.pk %} Edit Todo {% else %} Add New Todo {% endif %}</h2>
+
+<form method="post">
+    {% csrf_token %} {{form}}
+
+    <div class="d-flex mt-3 gap-4">
+        <button class="btn btn-primary" name="action" value="save_last" type="submit">Save</button>
+        <button class="btn btn-primary" name="action" value="save_and_add_another" type="submit">Save and Add Another</button>
+    </div>
+</form>
+
+{% endblock %}

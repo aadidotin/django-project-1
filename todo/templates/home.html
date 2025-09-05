@@ -1,0 +1,33 @@
+{% extends "layouts/auth_layout.html" %} {% block title %}Home Page{% endblock title %} {% block content %}
+<section>
+    {% if user.is_authenticated %}
+
+    <div class="text-end mb-4">
+        <a href="{% url "store" %}">Add Todo</a>
+    </div>
+    
+    {% if todos and todos.count > 0 %}
+    <table class="table table-sm table-hover table-striped table-bordred">
+        <tbody>
+            {% for todo in todos %}
+            <tr>
+                <td>
+                    <p>{{ todo.title }}</p>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>Form not Available</p>
+    {% endif %}
+
+    {% else %}
+
+    <h1 class="text-center">Welcome</h1>
+
+    <h4 class="mt-5 text-center">Please Login/Register to add Todo</h4>
+
+    {% endif %}
+</section>
+{% endblock content %}

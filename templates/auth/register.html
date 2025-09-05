@@ -1,0 +1,12 @@
+{% extends "layouts/guest.html" %} {% block title %}Login{% endblock title %} {% block content %}
+
+<h2>Register</h2>
+<form method="post">
+    {% csrf_token %} {{form}}
+
+    <button class="btn btn-primary mt-3" type="submit">Register</button>
+</form>
+
+<p>Don't have an account? Register <a href="{% url 'login' %}">here</a></p>
+
+{% endblock content %}

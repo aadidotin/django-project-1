@@ -1,0 +1,11 @@
+{
+  "emmet.includeLanguages": {
+    "django-html": "html",
+    "jinja-html": "html"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showAbbreviationSuggestions": true,
+  "files.associations": {
+    "**/templates/**": "django-html"
+  }
+}
